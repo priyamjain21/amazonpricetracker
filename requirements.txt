@@ -1,0 +1,2 @@
+smtp python library
+beautifulsoup
