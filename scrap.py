@@ -15,12 +15,10 @@ def check_price():
 
         print(title.strip());
         print(new_price);
-        if(new_price < 1700.00):
+        if(new_price < 1700.00):     #if price is fall below our price we get email 
            send_email()
-        if(new_price>1700.00):
-            send_email()
 
-def send_email():
+def send_email():                    #for sending email
         server=smtplib.SMTP('smtp.gmail.com',587)
         server.ehlo()
         server.starttls()
@@ -41,7 +39,7 @@ def send_email():
         print('HEY EMAIL HAS BEEN SENT!')
 
         server.quit()
-while(True):
+while(True):           # script run in every one hour
      check_price()
      time.sleep(3600)
 
